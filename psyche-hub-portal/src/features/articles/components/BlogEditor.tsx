@@ -4,7 +4,7 @@ import "react-quill/dist/quill.snow.css";
 
 interface BlogEditorProps {
   content: string;
-  setContent: Dispatch<React.SetStateAction<string>>;
+  setContent: Dispatch<React.SetStateAction<string>> | ((val: string) => void);
 }
 
 export default function BlogEditor({

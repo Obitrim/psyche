@@ -1,5 +1,5 @@
-import Layout from "@/components/layout/Layout";
-import { Button } from "@/components/ui/button";
+import Layout from "@/core/components/layout/Layout";
+import { Button } from "@/core/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Resources = () => {

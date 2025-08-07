@@ -1,13 +1,13 @@
 
-import Layout from "@/components/layout/Layout";
-import { psychologists } from "@/data/mockData";
+import Layout from "@/core/components/layout/Layout";
+import { psychologists } from "@/core/data/mockData";
 import PsychologistGrid from "@/features/psychologists/components/PsychologistGrid";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/core/components/ui/input";
+import { Button } from "@/core/components/ui/button";
 import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
+import { Badge } from "@/core/components/ui/badge";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/core/components/ui/select";
+import { Slider } from "@/core/components/ui/slider";
 
 // Extract all unique specialties from psychologists
 const allSpecialties = Array.from(

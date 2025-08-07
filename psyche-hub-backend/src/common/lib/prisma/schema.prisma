@@ -38,6 +38,8 @@ model articles {
   author_id          String?              @db.Uuid
   created_at         DateTime?            @default(now()) @db.Timestamptz(6)
   updated_at         DateTime?            @default(now()) @db.Timestamptz(6)
+  cover_img          String?              @default("")
+  summary            String?
   article_categories article_categories[]
   article_tags       article_tags[]
   author             psychologists?       @relation(fields: [author_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
@@ -67,4 +69,15 @@ model tags {
   created_at   DateTime?      @default(now()) @db.Timestamptz(6)
   updated_at   DateTime?      @default(now()) @db.Timestamptz(6)
   article_tags article_tags[]
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model users {
+  id           String @db.Uuid
+  profile_id   String @db.Uuid
+  profile_type String
+  role         String @db.VarChar(100)
+  password     String @db.VarChar(30)
+
+  @@ignore
 }

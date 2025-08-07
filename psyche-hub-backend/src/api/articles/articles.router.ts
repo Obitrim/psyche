@@ -7,9 +7,11 @@ import { validateRequest } from "@/common/utils/httpHandlers";
 import {
   CreateArticleDtoSchema,
   DeleteArticleDtoSchema,
+  FetchArticlesDtoSchema,
   GetArticleDtoSchema,
   UpdateArticleDtoSchema,
 } from "./articles.type";
+import uploader from "@/common/lib/multer";
 
 const articlesRegistry = new OpenAPIRegistry();
 
@@ -25,7 +27,11 @@ articlesRegistry.registerPath({
   tags: ["articles"],
   responses: createApiResponse(z.array(z.object({})), "Success"),
 });
-articlesRouter.get("/", articlesController.getArticles);
+articlesRouter.get(
+  "/",
+  validateRequest(FetchArticlesDtoSchema),
+  articlesController.getArticles
+);
 
 /**
  * Create new article
@@ -39,6 +45,7 @@ articlesRegistry.registerPath({
 });
 articlesRouter.post(
   "/",
+  uploader.single("cover_img"),
   validateRequest(CreateArticleDtoSchema),
   articlesController.createArticle
 );

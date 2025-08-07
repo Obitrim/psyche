@@ -1,16 +1,16 @@
 
-import Layout from "@/components/layout/Layout";
-import { psychologists } from "@/data/mockData";
+import Layout from "@/core/components/layout/Layout";
+import { psychologists } from "@/core/data/mockData";
 import { Link, useParams } from "react-router-dom";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/core/components/ui/badge";
+import { Button } from "@/core/components/ui/button";
 import { Star, Check, Calendar, Video, Clock } from "lucide-react";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/components/ui/tabs";
+} from "@/core/components/ui/tabs";
 import {
   Card,
   CardContent,
@@ -18,10 +18,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/core/components/ui/card";
 import { useState } from "react";
 import { format } from "date-fns";
-import { toast } from "@/components/ui/use-toast";
+import { toast } from "@/core/components/ui/use-toast";
 
 const PsychologistDetail = () => {
   const { id } = useParams<{ id: string }>();

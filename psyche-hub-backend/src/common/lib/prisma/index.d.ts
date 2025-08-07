@@ -3592,6 +3592,8 @@ export namespace Prisma {
     author_id: string | null
     created_at: Date | null
     updated_at: Date | null
+    cover_img: string | null
+    summary: string | null
   }
 
   export type ArticlesMaxAggregateOutputType = {
@@ -3601,6 +3603,8 @@ export namespace Prisma {
     author_id: string | null
     created_at: Date | null
     updated_at: Date | null
+    cover_img: string | null
+    summary: string | null
   }
 
   export type ArticlesCountAggregateOutputType = {
@@ -3610,6 +3614,8 @@ export namespace Prisma {
     author_id: number
     created_at: number
     updated_at: number
+    cover_img: number
+    summary: number
     _all: number
   }
 
@@ -3621,6 +3627,8 @@ export namespace Prisma {
     author_id?: true
     created_at?: true
     updated_at?: true
+    cover_img?: true
+    summary?: true
   }
 
   export type ArticlesMaxAggregateInputType = {
@@ -3630,6 +3638,8 @@ export namespace Prisma {
     author_id?: true
     created_at?: true
     updated_at?: true
+    cover_img?: true
+    summary?: true
   }
 
   export type ArticlesCountAggregateInputType = {
@@ -3639,6 +3649,8 @@ export namespace Prisma {
     author_id?: true
     created_at?: true
     updated_at?: true
+    cover_img?: true
+    summary?: true
     _all?: true
   }
 
@@ -3721,6 +3733,8 @@ export namespace Prisma {
     author_id: string | null
     created_at: Date | null
     updated_at: Date | null
+    cover_img: string | null
+    summary: string | null
     _count: ArticlesCountAggregateOutputType | null
     _min: ArticlesMinAggregateOutputType | null
     _max: ArticlesMaxAggregateOutputType | null
@@ -3747,6 +3761,8 @@ export namespace Prisma {
     author_id?: boolean
     created_at?: boolean
     updated_at?: boolean
+    cover_img?: boolean
+    summary?: boolean
     article_categories?: boolean | articles$article_categoriesArgs<ExtArgs>
     article_tags?: boolean | articles$article_tagsArgs<ExtArgs>
     author?: boolean | articles$authorArgs<ExtArgs>
@@ -3760,6 +3776,8 @@ export namespace Prisma {
     author_id?: boolean
     created_at?: boolean
     updated_at?: boolean
+    cover_img?: boolean
+    summary?: boolean
     author?: boolean | articles$authorArgs<ExtArgs>
   }, ExtArgs["result"]["articles"]>
 
@@ -3770,6 +3788,8 @@ export namespace Prisma {
     author_id?: boolean
     created_at?: boolean
     updated_at?: boolean
+    cover_img?: boolean
+    summary?: boolean
     author?: boolean | articles$authorArgs<ExtArgs>
   }, ExtArgs["result"]["articles"]>
 
@@ -3780,9 +3800,11 @@ export namespace Prisma {
     author_id?: boolean
     created_at?: boolean
     updated_at?: boolean
+    cover_img?: boolean
+    summary?: boolean
   }
 
-  export type articlesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "content" | "author_id" | "created_at" | "updated_at", ExtArgs["result"]["articles"]>
+  export type articlesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "content" | "author_id" | "created_at" | "updated_at" | "cover_img" | "summary", ExtArgs["result"]["articles"]>
   export type articlesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     article_categories?: boolean | articles$article_categoriesArgs<ExtArgs>
     article_tags?: boolean | articles$article_tagsArgs<ExtArgs>
@@ -3810,6 +3832,8 @@ export namespace Prisma {
       author_id: string | null
       created_at: Date | null
       updated_at: Date | null
+      cover_img: string | null
+      summary: string | null
     }, ExtArgs["result"]["articles"]>
     composites: {}
   }
@@ -4242,6 +4266,8 @@ export namespace Prisma {
     readonly author_id: FieldRef<"articles", 'String'>
     readonly created_at: FieldRef<"articles", 'DateTime'>
     readonly updated_at: FieldRef<"articles", 'DateTime'>
+    readonly cover_img: FieldRef<"articles", 'String'>
+    readonly summary: FieldRef<"articles", 'String'>
   }
     
 
@@ -7960,7 +7986,9 @@ export namespace Prisma {
     content: 'content',
     author_id: 'author_id',
     created_at: 'created_at',
-    updated_at: 'updated_at'
+    updated_at: 'updated_at',
+    cover_img: 'cover_img',
+    summary: 'summary'
   };
 
   export type ArticlesScalarFieldEnum = (typeof ArticlesScalarFieldEnum)[keyof typeof ArticlesScalarFieldEnum]
@@ -8190,6 +8218,8 @@ export namespace Prisma {
     author_id?: UuidNullableFilter<"articles"> | string | null
     created_at?: DateTimeNullableFilter<"articles"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"articles"> | Date | string | null
+    cover_img?: StringNullableFilter<"articles"> | string | null
+    summary?: StringNullableFilter<"articles"> | string | null
     article_categories?: Article_categoriesListRelationFilter
     article_tags?: Article_tagsListRelationFilter
     author?: XOR<PsychologistsNullableScalarRelationFilter, psychologistsWhereInput> | null
@@ -8202,6 +8232,8 @@ export namespace Prisma {
     author_id?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
+    cover_img?: SortOrderInput | SortOrder
+    summary?: SortOrderInput | SortOrder
     article_categories?: article_categoriesOrderByRelationAggregateInput
     article_tags?: article_tagsOrderByRelationAggregateInput
     author?: psychologistsOrderByWithRelationInput
@@ -8217,6 +8249,8 @@ export namespace Prisma {
     author_id?: UuidNullableFilter<"articles"> | string | null
     created_at?: DateTimeNullableFilter<"articles"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"articles"> | Date | string | null
+    cover_img?: StringNullableFilter<"articles"> | string | null
+    summary?: StringNullableFilter<"articles"> | string | null
     article_categories?: Article_categoriesListRelationFilter
     article_tags?: Article_tagsListRelationFilter
     author?: XOR<PsychologistsNullableScalarRelationFilter, psychologistsWhereInput> | null
@@ -8229,6 +8263,8 @@ export namespace Prisma {
     author_id?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
+    cover_img?: SortOrderInput | SortOrder
+    summary?: SortOrderInput | SortOrder
     _count?: articlesCountOrderByAggregateInput
     _max?: articlesMaxOrderByAggregateInput
     _min?: articlesMinOrderByAggregateInput
@@ -8244,6 +8280,8 @@ export namespace Prisma {
     author_id?: UuidNullableWithAggregatesFilter<"articles"> | string | null
     created_at?: DateTimeNullableWithAggregatesFilter<"articles"> | Date | string | null
     updated_at?: DateTimeNullableWithAggregatesFilter<"articles"> | Date | string | null
+    cover_img?: StringNullableWithAggregatesFilter<"articles"> | string | null
+    summary?: StringNullableWithAggregatesFilter<"articles"> | string | null
   }
 
   export type categoriesWhereInput = {
@@ -8506,6 +8544,8 @@ export namespace Prisma {
     content?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
+    cover_img?: string | null
+    summary?: string | null
     article_categories?: article_categoriesCreateNestedManyWithoutArticleInput
     article_tags?: article_tagsCreateNestedManyWithoutArticleInput
     author?: psychologistsCreateNestedOneWithoutArticlesInput
@@ -8518,6 +8558,8 @@ export namespace Prisma {
     author_id?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
+    cover_img?: string | null
+    summary?: string | null
     article_categories?: article_categoriesUncheckedCreateNestedManyWithoutArticleInput
     article_tags?: article_tagsUncheckedCreateNestedManyWithoutArticleInput
   }
@@ -8528,6 +8570,8 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    cover_img?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
     article_categories?: article_categoriesUpdateManyWithoutArticleNestedInput
     article_tags?: article_tagsUpdateManyWithoutArticleNestedInput
     author?: psychologistsUpdateOneWithoutArticlesNestedInput
@@ -8540,6 +8584,8 @@ export namespace Prisma {
     author_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    cover_img?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
     article_categories?: article_categoriesUncheckedUpdateManyWithoutArticleNestedInput
     article_tags?: article_tagsUncheckedUpdateManyWithoutArticleNestedInput
   }
@@ -8551,6 +8597,8 @@ export namespace Prisma {
     author_id?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
+    cover_img?: string | null
+    summary?: string | null
   }
 
   export type articlesUpdateManyMutationInput = {
@@ -8559,6 +8607,8 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    cover_img?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type articlesUncheckedUpdateManyInput = {
@@ -8568,6 +8618,8 @@ export namespace Prisma {
     author_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    cover_img?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type categoriesCreateInput = {
@@ -8941,6 +8993,8 @@ export namespace Prisma {
     author_id?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    cover_img?: SortOrder
+    summary?: SortOrder
   }
 
   export type articlesMaxOrderByAggregateInput = {
@@ -8950,6 +9004,8 @@ export namespace Prisma {
     author_id?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    cover_img?: SortOrder
+    summary?: SortOrder
   }
 
   export type articlesMinOrderByAggregateInput = {
@@ -8959,6 +9015,8 @@ export namespace Prisma {
     author_id?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    cover_img?: SortOrder
+    summary?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -9550,6 +9608,8 @@ export namespace Prisma {
     content?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
+    cover_img?: string | null
+    summary?: string | null
     article_tags?: article_tagsCreateNestedManyWithoutArticleInput
     author?: psychologistsCreateNestedOneWithoutArticlesInput
   }
@@ -9561,6 +9621,8 @@ export namespace Prisma {
     author_id?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
+    cover_img?: string | null
+    summary?: string | null
     article_tags?: article_tagsUncheckedCreateNestedManyWithoutArticleInput
   }
 
@@ -9605,6 +9667,8 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    cover_img?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
     article_tags?: article_tagsUpdateManyWithoutArticleNestedInput
     author?: psychologistsUpdateOneWithoutArticlesNestedInput
   }
@@ -9616,6 +9680,8 @@ export namespace Prisma {
     author_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    cover_img?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
     article_tags?: article_tagsUncheckedUpdateManyWithoutArticleNestedInput
   }
 
@@ -9650,6 +9716,8 @@ export namespace Prisma {
     content?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
+    cover_img?: string | null
+    summary?: string | null
     article_categories?: article_categoriesCreateNestedManyWithoutArticleInput
     author?: psychologistsCreateNestedOneWithoutArticlesInput
   }
@@ -9661,6 +9729,8 @@ export namespace Prisma {
     author_id?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
+    cover_img?: string | null
+    summary?: string | null
     article_categories?: article_categoriesUncheckedCreateNestedManyWithoutArticleInput
   }
 
@@ -9705,6 +9775,8 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    cover_img?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
     article_categories?: article_categoriesUpdateManyWithoutArticleNestedInput
     author?: psychologistsUpdateOneWithoutArticlesNestedInput
   }
@@ -9716,6 +9788,8 @@ export namespace Prisma {
     author_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    cover_img?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
     article_categories?: article_categoriesUncheckedUpdateManyWithoutArticleNestedInput
   }
 
@@ -9936,6 +10010,8 @@ export namespace Prisma {
     content?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
+    cover_img?: string | null
+    summary?: string | null
     article_categories?: article_categoriesCreateNestedManyWithoutArticleInput
     article_tags?: article_tagsCreateNestedManyWithoutArticleInput
   }
@@ -9946,6 +10022,8 @@ export namespace Prisma {
     content?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
+    cover_img?: string | null
+    summary?: string | null
     article_categories?: article_categoriesUncheckedCreateNestedManyWithoutArticleInput
     article_tags?: article_tagsUncheckedCreateNestedManyWithoutArticleInput
   }
@@ -9986,6 +10064,8 @@ export namespace Prisma {
     author_id?: UuidNullableFilter<"articles"> | string | null
     created_at?: DateTimeNullableFilter<"articles"> | Date | string | null
     updated_at?: DateTimeNullableFilter<"articles"> | Date | string | null
+    cover_img?: StringNullableFilter<"articles"> | string | null
+    summary?: StringNullableFilter<"articles"> | string | null
   }
 
   export type article_tagsCreateWithoutTagInput = {
@@ -10104,6 +10184,8 @@ export namespace Prisma {
     content?: string | null
     created_at?: Date | string | null
     updated_at?: Date | string | null
+    cover_img?: string | null
+    summary?: string | null
   }
 
   export type articlesUpdateWithoutAuthorInput = {
@@ -10112,6 +10194,8 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    cover_img?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
     article_categories?: article_categoriesUpdateManyWithoutArticleNestedInput
     article_tags?: article_tagsUpdateManyWithoutArticleNestedInput
   }
@@ -10122,6 +10206,8 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    cover_img?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
     article_categories?: article_categoriesUncheckedUpdateManyWithoutArticleNestedInput
     article_tags?: article_tagsUncheckedUpdateManyWithoutArticleNestedInput
   }
@@ -10132,6 +10218,8 @@ export namespace Prisma {
     content?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    cover_img?: NullableStringFieldUpdateOperationsInput | string | null
+    summary?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type article_tagsCreateManyTagInput = {

@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/core/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-psyche-50 to-background py-16 md:py-24">
+    <div className="relative overflow-hidden bg-gradient-to-b from-psyche-50 to-background  py-16 md:py-24">
       <div className="container relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="mb-6 bg-gradient-to-r from-psyche-400 to-psyche-300 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-5xl md:text-6xl">

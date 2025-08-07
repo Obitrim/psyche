@@ -1,5 +1,5 @@
 
-import { Psychologist } from "@/types";
+import { Psychologist } from "@/core/types";
 import PsychologistCard from "./PsychologistCard";
 
 interface PsychologistGridProps {

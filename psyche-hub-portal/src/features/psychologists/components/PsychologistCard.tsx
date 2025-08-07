@@ -1,12 +1,12 @@
-import { Psychologist } from "@/types";
+import { Psychologist } from "@/core/types";
 import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+} from "@/core/components/ui/card";
+import { Badge } from "@/core/components/ui/badge";
 import { Star } from "lucide-react";
 
 interface PsychologistCardProps {

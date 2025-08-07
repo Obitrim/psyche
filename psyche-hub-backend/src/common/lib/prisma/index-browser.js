@@ -140,7 +140,9 @@ exports.Prisma.ArticlesScalarFieldEnum = {
   content: 'content',
   author_id: 'author_id',
   created_at: 'created_at',
-  updated_at: 'updated_at'
+  updated_at: 'updated_at',
+  cover_img: 'cover_img',
+  summary: 'summary'
 };
 
 exports.Prisma.CategoriesScalarFieldEnum = {

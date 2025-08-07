@@ -1,19 +1,23 @@
-
-import { Article } from "@/types";
+import { Article } from "@/core/types";
 import ArticleCard from "./ArticleCard";
 
 interface FeaturedArticleProps {
-  article: Article;
+  article?: Article;
+  loading?: boolean;
 }
 
-const FeaturedArticle = ({ article }: FeaturedArticleProps) => {
+const FeaturedArticle = ({ article, loading }: FeaturedArticleProps) => {
   return (
     <div className="mb-12">
       <div className="mb-6">
         <h2 className="text-3xl font-bold mb-2">Featured Article</h2>
         <div className="h-1 w-20 bg-psyche-300 rounded-full"></div>
       </div>
-      <ArticleCard article={article} variant="featured" />
+      {article && (
+        <ArticleCard article={article} variant="featured" loading={loading} />
+      )}
+
+      {!article && <p>No article</p>}
     </div>
   );
 };
