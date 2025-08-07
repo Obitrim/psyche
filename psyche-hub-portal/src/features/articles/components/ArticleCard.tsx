@@ -9,6 +9,7 @@ import { formatDistanceToNow } from "date-fns";
 import { Skeleton } from "@/core/components/ui/skeleton";
 import { cn } from "@/core/lib/utils";
 import { Article } from "../articles.type";
+import { Image } from "@imagekit/react";
 
 interface ArticleCardProps {
   article: Article;
@@ -28,19 +29,21 @@ const ArticleCard = ({
   }
 
   return (
-    <Card
-      className={`overflow-hidden transition-all hover:shadow-md flex flex-col ${
-        isFeatured ? "h-full" : ""
-      }`}>
-      <Link to={`/articles/${article.id}`}>
+    <Link to={`/articles/${article.id}`}>
+      <Card
+        className={`overflow-hidden transition-all shadow-none  hover:shadow-md flex flex-col ${
+          isFeatured ? "h-full" : ""
+        }`}>
         <div
           className={`relative ${
             isFeatured ? "h-72" : "h-48"
           } overflow-hidden`}>
-          <img
+          <Image
+            urlEndpoint="https://ik.imagekit.io/ci4mdmvcu"
             src={article.cover_img}
             alt={article.title}
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            className="h-full object-cover"
+            transformation={[{ height: "192px", width: "313px" }]}
           />
           {/* {!isFeatured && (
             <div className="absolute top-2 left-2">
@@ -52,10 +55,9 @@ const ArticleCard = ({
             </div>
           )} */}
         </div>
-      </Link>
 
-      <CardHeader className="pb-2">
-        {/* <div className="flex gap-2 items-center text-sm text-muted-foreground mb-1">
+        <CardHeader className="pb-2">
+          {/* <div className="flex gap-2 items-center text-sm text-muted-foreground mb-1">
           <Link
             to={`/categories/${article.category.id}`}
             className="hover:text-foreground transition-colors">
@@ -64,24 +66,26 @@ const ArticleCard = ({
           <span>•</span>
           <span>{article.readTime} min read</span>
         </div> */}
-        <Link to={`/articles/${article.id}`}>
-          <h3
-            className={cn(
-              "font-semibold hover:text-psyche-300 transition-colors",
-              "line-clamp-3",
-              { "text-2xl": isFeatured, "text-lg": !isFeatured }
-            )}>
-            {article.title}
-          </h3>
-        </Link>
-      </CardHeader>
+          <Link to={`/articles/${article.id}`}>
+            <h3
+              className={cn(
+                "font-semibold hover:text-psyche-300 transition-colors",
+                "line-clamp-3",
+                { "text-2xl": isFeatured, "text-lg": !isFeatured }
+              )}>
+              {article.title}
+            </h3>
+          </Link>
+        </CardHeader>
 
-      <CardContent className="pb-3 flex-1">
-        <p className="text-muted-foreground line-clamp-2">{article.summary}</p>
-      </CardContent>
+        <CardContent className="pb-3 flex-1">
+          <p className="text-muted-foreground line-clamp-2">
+            {article.summary}
+          </p>
+        </CardContent>
 
-      <CardFooter className="pt-0 flex items-center justify-between">
-        {/* <Link
+        <CardFooter className="pt-0 flex items-center justify-between">
+          {/* <Link
           to={`/authors/${article.author.id}`}
           className="flex items-center gap-2 group">
           <div className="h-8 w-8 rounded-full overflow-hidden">
@@ -95,13 +99,14 @@ const ArticleCard = ({
             {article.author.name}
           </span>
         </Link> */}
-        <span className="text-xs text-muted-foreground">
-          {formatDistanceToNow(new Date(article.created_at), {
-            addSuffix: true,
-          })}
-        </span>
-      </CardFooter>
-    </Card>
+          <span className="text-xs text-muted-foreground">
+            {formatDistanceToNow(new Date(article.created_at), {
+              addSuffix: true,
+            })}
+          </span>
+        </CardFooter>
+      </Card>
+    </Link>
   );
 };
 

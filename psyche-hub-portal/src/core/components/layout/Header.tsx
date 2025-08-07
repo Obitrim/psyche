@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/core/components/ui/button";
 import { ModeToggle } from "@/core/components/theme/ModeToggle";
 
 const Header = () => {
@@ -46,12 +45,12 @@ const Header = () => {
         </div>
         <div className="flex items-center gap-2">
           <ModeToggle />
-          <Button variant="outline" asChild>
+          {/* <Button variant="outline" asChild>
             <Link to="/login">Log in</Link>
           </Button>
           <Button asChild>
             <Link to="/signup">Sign up</Link>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </header>

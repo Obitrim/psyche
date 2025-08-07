@@ -27,7 +27,7 @@ const Footer = () => {
                   Blog
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/categories"
                   className="text-muted-foreground hover:text-foreground transition-colors">
@@ -47,7 +47,7 @@ const Footer = () => {
                   className="text-muted-foreground hover:text-foreground transition-colors">
                   Free Resources
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           {/* <div>
@@ -69,14 +69,14 @@ const Footer = () => {
                   About Us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/contact"
                   className="text-muted-foreground hover:text-foreground transition-colors">
                   Contact
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   to="/privacy"
                   className="text-muted-foreground hover:text-foreground transition-colors">
@@ -89,7 +89,7 @@ const Footer = () => {
                   className="text-muted-foreground hover:text-foreground transition-colors">
                   Terms of Service
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -97,7 +97,7 @@ const Footer = () => {
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} PsycheHub. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 mt-4 sm:mt-0">
+          {/* <div className="flex items-center gap-4 mt-4 sm:mt-0">
             <a
               href="#"
               className="text-muted-foreground hover:text-foreground transition-colors">
@@ -154,7 +154,7 @@ const Footer = () => {
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
